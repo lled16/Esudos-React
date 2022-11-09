@@ -12,10 +12,12 @@ import OutraLista from './Components/outraLista';
 import { useState } from 'react';
 import SeuNome from './Components/SeuNome';
 import Saudacao from './Components/Saudacao';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Empresa from './pages/Empresa';
 import Contato from './pages/Contato';
+import Navbar from './Components/Layout/Navbar';
+import Footer from './Components/Layout/Footer';
 
 
 
@@ -40,12 +42,7 @@ function App() {
   return (
     <Router>
 
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/empresa">Empresa</Link></li>
-        <li><Link to="/contato">Contato</Link></li>
-      </ul>
-
+    <Navbar />
       <Routes>
         <Route exact path='/' element={<Home />} />
 
@@ -96,6 +93,7 @@ function App() {
         <Saudacao nome={nm} />
 
       </div>
+      <Footer />
     </Router>
   );
 }
